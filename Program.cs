@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Threading.Tasks;
 using Microsoft.CognitiveServices.Speech;
+using Microsoft.CognitiveServices.Speech.Audio;
 
 namespace speech_services_azure
 {
@@ -50,7 +51,7 @@ public static async Task SynthesisToSpeakerAsync()
         public static async Task RecognizeSpeechAsycn()
         {
             var config = SpeechConfig.FromSubscription("ca14dda5909c4c4bb82eb4c93fc831f6","canadacentral");
-
+           //var audio =  AudioConfig.FromWavFileInput("");
             using (var recogniger = new SpeechRecognizer(config))
             {
                 var result = await recogniger.RecognizeOnceAsync();
